@@ -4,11 +4,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --config ./build/webpack.base.js"
+    "dev": "webpack serve --config ./build/webpack.base.js",
+    "preinstall": "npx only-allow pnpm"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daiwanxing/calculator.git"
+  },
+  "engines": {
+    "node": ">=14.15.0"
   },
   "type": "module",
   "keywords": [],
@@ -27,6 +31,7 @@
     "@types/node": "^18.7.14",
     "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "only-allow": "^1.1.1",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
     "typescript": "^4.8.2",
