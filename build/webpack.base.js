@@ -2,9 +2,14 @@ import path from "path";
 import { VueLoaderPlugin } from "vue-loader";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { fileURLToPath } from "url";
+import Webpackbar from "webpackbar";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export const root = path.join(__dirname, "../");
+
 
 /**
  * @type { import("webpack").Configuration; }
@@ -16,17 +21,19 @@ export default {
     },
     devtool: "eval-source-map",
     devServer: {
-        hot: true,
+        client: {
+            progress: true,
+            overlay: {
+                errors: true, // 在热更新时全屏出现编译错误
+                warnings: false, // 只在控制台出现编译警告
+            }
+        },
+        static: path.join(root, "dist"),
+        // 启动G-ZIP
+        compress: true,
         port: "auto",
         open: true,
-        compress: true,
-        client: {
-            progress: false,
-            overlay: {
-                errors: true,
-                warnings: true,
-            }
-        }
+        hot: true,
     },
     module: {
         rules: [
@@ -60,24 +67,24 @@ export default {
                 type: "assets/inline"
             }
         ],
-        output: {
-            chunkFilename: "[name].[chunkhash:8].js",
-            filename: "[name].[contenthash:8].bundle.js",
-            path: path.join(root, "dist")
+    },
+    output: {
+        chunkFilename: "[name].[chunkhash:8].js",
+        filename: "[name].[contenthash:8].bundle.js",
+        path: path.join(root, "dist")
+    },
+    resolve: {
+        alias: {
+            "@": path.join(root, "src"),
         },
-        resolve: {
-            alias: {
-                "@": path.join(root, "src"),
-            },
-            extensions: [".ts", ".ts"],
-            modules: ["node_modules"],
-        },
-        optimization: {
-            splitChunks: {
-                chunks: "all",
-                name: "vendor"
-            }
-        },
+        extensions: [".ts", ".vue", ".js"],
+        modules: ["node_modules"],
+    },
+    optimization: {
+        splitChunks: {
+            chunks: "all",
+            name: "vendor"
+        }
     },
     plugins: [
         new VueLoaderPlugin(),
@@ -87,5 +94,8 @@ export default {
         new HtmlWebpackPlugin({
             template: path.join(root, "src", "index.html"),
         }),
+        new Webpackbar({
+            name: "webpack",
+        })
     ]
 }

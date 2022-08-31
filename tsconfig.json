@@ -7,13 +7,29 @@
         "strict": true,
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
+        "esModuleInterop": true,
+        "noImplicitThis": true,
+        "importHelpers": true,
         "moduleResolution": "node",
         "lib": [
             "DOM",
-            "ES2015"
-        ]
+            "ES2015",
+        ],
+        // "typeRoots": [""], typeRoots 不指定的话默认是 ["node_modules/@types"]
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "types": [
+            "node"
+        ],
     },
     "exclude": [
         "node_modules"
+    ],
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.vue",
     ]
 }
