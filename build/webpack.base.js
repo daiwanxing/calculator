@@ -20,9 +20,14 @@ export default {
         app: path.join(root, "src/main.ts")
     },
     devtool: "eval-source-map",
+    infrastructureLogging: {
+        level: "warn"
+    },
+    stats: "errors-warnings",
     devServer: {
         client: {
-            progress: true,
+            logging: "error",
+            progress: false,
             overlay: {
                 errors: true, // 在热更新时全屏出现编译错误
                 warnings: false, // 只在控制台出现编译警告

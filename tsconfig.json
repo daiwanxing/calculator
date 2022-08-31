@@ -10,6 +10,7 @@
         "esModuleInterop": true,
         "noImplicitThis": true,
         "importHelpers": true,
+        "jsx": "preserve",
         "moduleResolution": "node",
         "lib": [
             "DOM",
