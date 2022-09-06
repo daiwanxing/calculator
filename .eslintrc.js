@@ -24,6 +24,7 @@ module.exports = {
         "vue/html-indent": ["error", 4, {
             "baseIndent": 1,
             "ignores": []
-          }]
+        }],
+        "vue/multi-word-component-names": ["off"]
     },
 }
