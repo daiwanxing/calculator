@@ -5,10 +5,10 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import { fileURLToPath } from "url";
 import Webpackbar from "webpackbar";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const _filename = fileURLToPath(import.meta.url);
+const _dirname = path.dirname(_filename);
 
-export const root = path.join(__dirname, "../");
+export const root = path.join(_dirname, "../");
 
 
 /**
@@ -55,7 +55,7 @@ export default {
             },
             {
                 test: /(\.s|css)$/,
-                use: ["css-loader", "sass-loader"],
+                use: ["style-loader", "css-loader", "sass-loader"],
             },
             {
                 test: /(\.vue)$/,

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-
 const SubTitle = ref("A Caluculator App!");
 </script>
 

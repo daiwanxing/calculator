@@ -21,8 +21,6 @@ module.exports = {
     ],
     rules: {
         "prefer-const": ["error"],
-        'vue/no-unused-vars': 'error',
-        "@typescript-eslint/no-unused-vars": ["error"],
         "vue/html-indent": ["error", 4, {
             "baseIndent": 1,
             "ignores": []
