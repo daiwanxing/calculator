@@ -1,17 +1,10 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-const SubTitle = ref("A Caluculator App!");
+import ThemeMode from "@/components/ThemeMode/index.vue"
 
 </script>
 
 <template>
-    <h1>{{ SubTitle }}</h1>
-    <h2>Ok! Here We go! ！！！</h2>
+    <main>
+        <ThemeMode />
+    </main>
 </template>
-
-
-<style>
-    h1 {
-        color: #09f;
-    }
-</style>
