@@ -21,7 +21,7 @@ export default {
 	},
 	devtool: "eval-source-map",
 	infrastructureLogging: {
-		level: "warn",
+		level: "info",
 	},
 	stats: "errors-warnings",
 	devServer: {
@@ -37,7 +37,7 @@ export default {
 		// 启动G-ZIP
 		compress: true,
 		port: "auto",
-		open: true,
+		open: false,
 		hot: true,
 	},
 	module: {
@@ -50,7 +50,7 @@ export default {
 						options: {
 							appendTsSuffixTo:
 								[
-									/(\.vue)$/,
+									"\\.vue$",
 								],
 						},
 					},
