@@ -14,7 +14,7 @@
 	"singleQuote": false,
 	"tabWidth": 4,
 	"trailingComma": "es5",
-	"useTabs": true,
+	"useTabs": false,
 	"endOfLine": "auto",
 	"vueIndentScriptAndStyle": false
 }

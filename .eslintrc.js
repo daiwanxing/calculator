@@ -8,10 +8,13 @@ module.exports = {
 		es6: true,
 		browser: true,
 	},
+	// this parser will lint vue file and found some syntax error
 	parser: "vue-eslint-parser",
 	parserOptions: {
+		// enable eslint lint typescript code
 		parser: "@typescript-eslint/parser",
 		sourceType: "module",
+		// for support es9 syntax
 		ecmaVersion: "es2018",
 	},
 	extends: [

@@ -1,7 +1,7 @@
 <template>
-	<main>
-		<ThemeMode />
-	</main>
+    <main>
+        <ThemeMode />
+    </main>
 </template>
 
 <script lang="ts" setup>
