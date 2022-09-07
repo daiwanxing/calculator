@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import ThemeMode from "@/components/ThemeMode/index.vue"
-
+import ThemeMode from "@/components/ThemeMode/index.vue";
 </script>
 
 <template>
-    <main>
-        <ThemeMode />
-    </main>
+	<main>
+		<ThemeMode />
+	</main>
 </template>
