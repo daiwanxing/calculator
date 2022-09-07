@@ -16,19 +16,15 @@ module.exports = {
 	},
 	extends: [
 		"eslint:recommended",
+		// this plugin used to lint *.vue code, if you comment this line， eslint will not detect *.vue file code
+		// remeber restart your vscode after add this line, then will be work
 		"plugin:vue/vue3-strongly-recommended",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
 	],
 	rules: {
 		"prefer-const": ["error"],
-		"vue/html-indent": [
-			"error",
-			4,
-			{
-				baseIndent: 1,
-				ignores: [],
-			},
-		],
 		"vue/multi-word-component-names": ["off"],
 	},
+	plugins: ["prettier"],
 };

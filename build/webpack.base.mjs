@@ -4,6 +4,7 @@ import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { fileURLToPath } from "url";
 import Webpackbar from "webpackbar";
+import ESLintPlugin from "eslint-webpack-plugin";
 
 const _filename = fileURLToPath(import.meta.url);
 const _dirname = path.dirname(_filename);
@@ -47,14 +48,21 @@ export default {
 					{
 						loader: "ts-loader",
 						options: {
-							appendTsSuffixTo: [/(\.vue)$/],
+							appendTsSuffixTo:
+								[
+									/(\.vue)$/,
+								],
 						},
 					},
 				],
 			},
 			{
 				test: /(\.s|css)$/,
-				use: ["style-loader", "css-loader", "sass-loader"],
+				use: [
+					"style-loader",
+					"css-loader",
+					"sass-loader",
+				],
 			},
 			{
 				test: /(\.vue)$/,
@@ -100,6 +108,9 @@ export default {
 		}),
 		new Webpackbar({
 			name: "webpack",
+		}),
+		new ESLintPlugin({
+			extensions: ["vue", "ts"],
 		}),
 	],
 };

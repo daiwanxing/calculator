@@ -4,10 +4,11 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"dev": "webpack serve --config ./build/webpack.base.js",
-		"preinstall": "npx only-allow pnpm"
+		"dev": "webpack serve --config ./build/webpack.base.mjs",
+		"preinstall": "npx only-allow pnpm",
+		"formatCode": "npx prettier --write .",
+		"lintFix": "npx eslint --ext .js,.jsx,.ts,.tsx,.vue --fix src"
 	},
-	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/daiwanxing/calculator.git"
@@ -34,6 +35,8 @@
 		"clean-webpack-plugin": "^4.0.0",
 		"css-loader": "^6.7.1",
 		"eslint": "^8.23.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-vue": "^9.4.0",
 		"eslint-webpack-plugin": "^3.2.0",
 		"html-webpack-plugin": "^5.5.0",

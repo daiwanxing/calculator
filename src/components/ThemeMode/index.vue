@@ -38,7 +38,10 @@ const toggle = (i: number) => {
 <template>
 	<div class="g-wrapper">
 		<div
-			:class="['g-btn-contianer g-btn-layout', animateCls]"
+			:class="[
+				'g-btn-contianer g-btn-layout',
+				animateCls,
+			]"
 			:style="{
 				'--g-pos-left': cPos,
 				'--g-rotate': cRotate,
@@ -47,7 +50,9 @@ const toggle = (i: number) => {
 			<span
 				:class="[
 					'material-icons g-btn-icon',
-					activeKey === i ? 'active' : '',
+					activeKey === i
+						? 'active'
+						: '',
 				]"
 				@click="toggle(i)"
 				v-for="(n, i) in btns"
@@ -89,7 +94,8 @@ const toggle = (i: number) => {
 		transition: transform 0.5s cubic-bezier(0, 0, 0.48, 1);
 
 		&.smooth {
-			transform: translate(-50%, -50%) rotateY(var(--g-rotate));
+			transform: translate(-50%, -50%)
+				rotateY(var(--g-rotate));
 		}
 
 		&::after {
@@ -103,8 +109,10 @@ const toggle = (i: number) => {
 			transform: translateX(
 				var(--g-padding-left)
 			); // 模拟按钮的padding-left
-			box-shadow: inset 8px 8px 6px #d9dce6, inset -5px -5px 15px #f5f9fd,
-				inset -5px -5px 15px #f5f9fd, inset 7px 7px 6px #d9dce6;
+			box-shadow: inset 8px 8px 6px #d9dce6,
+				inset -5px -5px 15px #f5f9fd,
+				inset -5px -5px 15px #f5f9fd,
+				inset 7px 7px 6px #d9dce6;
 			border-radius: 12px;
 			transition: left 0.8s ease;
 			cursor: pointer;
