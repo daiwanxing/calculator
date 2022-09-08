@@ -30,9 +30,4 @@ module.exports = {
         "vue/multi-word-component-names": ["off"],
     },
     plugins: ["prettier"],
-    settings: {
-        "import/parsers": {
-            "@typescript-eslint/parser": [".ts", ".tsx"],
-        },
-    },
 };

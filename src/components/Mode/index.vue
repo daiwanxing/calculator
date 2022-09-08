@@ -67,6 +67,7 @@ const { toggle, mode } = useTheme();
         padding: 0 10px;
         font-size: 28px;
         color: var(--text-color);
+        cursor: pointer;
         transition: color 0.5s ease;
 
         &.active {
