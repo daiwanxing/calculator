@@ -55,7 +55,17 @@ export default {
             },
             {
                 test: /(\.s|css)$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            // ~ has been deprecated, not need write ~
+                            additionalData: `@import "@/styles/var.scss";`,
+                        },
+                    },
+                ],
             },
             {
                 test: /(\.vue)$/,

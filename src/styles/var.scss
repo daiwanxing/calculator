@@ -1,0 +1,15 @@
+html[data-theme="DARK"] {
+    --bg-color: #22252d;
+    --bg-color-light: #292d36;
+    --bg-color-light-2: #212b33;
+    --text-color-2: #fff;
+    --text-color: #6f7277;
+}
+
+html[data-theme="LIGHT"] {
+    --bg-color: #ffffff;
+    --bg-color-light: #f9f9f9;
+    --bg-color-light-2: #f5f5f5;
+    --text-color: #5a5d64;
+    --text-color-2: #444850;
+}

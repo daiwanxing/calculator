@@ -36,8 +36,7 @@ const keyboardButtons = [
         },
     },
     {
-        name: "&divide;",
-        decode: true,
+        name: "/",
         handler() {
             emits("enterFlag", FLAG_KEYS.DIVIDE);
         },
@@ -148,8 +147,8 @@ const tapEngine = () => {
     navigator.vibrate(40);
 };
 
-const btnList: Array<HTMLElement> = [];
-const btnGroupsListRef = (el: HTMLElement) => {
+const btnList: Array<Element> = [];
+const btnGroupsListRef = (el: Element) => {
     if (el) {
         el.addEventListener("click", tapEngine);
         btnList.push(el);
