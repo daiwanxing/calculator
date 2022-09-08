@@ -38,14 +38,15 @@ const { toggle, mode } = useTheme();
 
     .app-mode-switch {
         position: relative;
-        display: inline-grid;
-        grid-template-columns: repeat(2, 18vw);
+        margin: auto;
+        width: 30%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         column-gap: 20px;
         align-items: center;
-        padding: 14px;
+        padding: 10px 14px;
         border-radius: 24px;
         background-color: var(--bg-color-light);
-        // box-shadow: -10px -10px 15px #f5f9fd, 10px 10px 15px #d8dbe5;
 
         // &::after {
         //     content: "";
@@ -67,11 +68,10 @@ const { toggle, mode } = useTheme();
         padding: 0 10px;
         font-size: 28px;
         color: var(--text-color);
-        cursor: pointer;
         transition: color 0.5s ease;
 
         &.active {
-            color: var(--text-active-color);
+            color: orange;
         }
     }
 }
