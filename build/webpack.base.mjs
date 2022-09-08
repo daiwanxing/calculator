@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import { fileURLToPath } from "url";
 import Webpackbar from "webpackbar";
 import ESLintPlugin from "eslint-webpack-plugin";
+import Webpack from "webpack";
 
 const _filename = fileURLToPath(import.meta.url);
 const _dirname = path.dirname(_filename);
@@ -114,6 +115,10 @@ export default {
         }),
         new ESLintPlugin({
             extensions: ["vue", "ts"],
+        }),
+        new Webpack.DefinePlugin({
+            __VUE_OPTIONS_API__: false,
+            __VUE_PROD_DEVTOOLS__: false,
         }),
     ],
 };
